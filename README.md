@@ -2,27 +2,27 @@
 The `rfc5322` package implements a parser for `address-list` and `date-time` strings, as defined in RFC5322.
 It also supports encoded words (RFC2047) and has international tokens (RFC6532).
 
-# `rfc5322/parser` directory
+# Generated code
 The lexer and parser are generated using ANTLR4.
 The grammar is defined in the g4 files:
 - RFC5322Parser.g4 defines the parser grammar,
 - RFC5322Lexer.g4 defines the lexer grammar.
 
-These grammars are derived from the ABNF grammar provided in the RFCs above, 
-albeit with some relaxations added to support "nonstandard" (bad) input.
+These grammars are derived from the ABNF grammar provided in the RFCs mentioned above, 
+albeit with some relaxations added to support "nonstandard" (and in some cases, bad) input.
 
-Running `antlr4` on these g4 files generates a parser which recognises strings conforming to the grammar:
-- rfc5322_lexer.go
-- rfc5322parser_base_listener.go
-- rfc5322_parser.go
-- rfc5322parser_listener.go
+Running `go generate` generates a parser which recognises strings conforming to the grammar:
+- parser/rfc5322_lexer.go
+- parser/rfc5322parser_base_listener.go
+- parser/rfc5322_parser.go
+- parser/rfc5322parser_listener.go
 
 The generated parser can then be used to convert a valid address/date into an abstract syntax tree.
 
-# `rfc5322` directory
+# Parsing
 Once we have an abstract syntax tree, we must turn it into something usable, namely a `mail.Address` or `time.Time`.
 
-The generated code in the `rfc5322/parser` directory implements a walker.
+The generated code in the `parser` directory implements a walker.
 This walker walks over the abstract syntax tree, 
 calling a callback when entering and another when when exiting each node.
 By default, the callbacks are no-ops, unless they are overridden.
