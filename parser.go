@@ -1,6 +1,7 @@
 package rfc5322
 
 import (
+	"io"
 	"net/mail"
 	"time"
 
@@ -8,6 +9,12 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"github.com/sirupsen/logrus"
 )
+
+// CharsetReader, if non-nil, defines a function to generate charset-conversion readers,
+// converting from the provided charset into UTF-8, for use when decoding RFC2047 encoded words.
+// Charsets are always lower-case. utf-8, iso-8859-1 and us-ascii charsets are handled by default.
+// One of the CharsetReader's result values must be non-nil.
+var CharsetReader func(charset string, input io.Reader) (io.Reader, error)
 
 // ParseAddressList parses one or more valid RFC5322 (with RFC2047) addresses.
 func ParseAddressList(input string) ([]*mail.Address, error) {
