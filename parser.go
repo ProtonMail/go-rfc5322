@@ -29,7 +29,12 @@ func ParseAddressList(input string) ([]*mail.Address, error) {
 	p.AddErrorListener(w)
 	p.AddParseListener(&parseListener{rules: p.GetRuleNames()})
 
-	antlr.ParseTreeWalkerDefault.Walk(w, p.AddressList())
+	tree := p.AddressList()
+	if w.err != nil {
+		return nil, w.err
+	}
+
+	antlr.ParseTreeWalkerDefault.Walk(w, tree)
 
 	return w.res.([]*mail.Address), w.err
 }
@@ -47,7 +52,12 @@ func ParseDateTime(input string) (time.Time, error) {
 	p.AddErrorListener(w)
 	p.AddParseListener(&parseListener{rules: p.GetRuleNames()})
 
-	antlr.ParseTreeWalkerDefault.Walk(w, p.DateTime())
+	tree := p.DateTime()
+	if w.err != nil {
+		return time.Time{}, w.err
+	}
+
+	antlr.ParseTreeWalkerDefault.Walk(w, tree)
 
 	return w.res.(time.Time), w.err
 }

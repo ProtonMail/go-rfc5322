@@ -229,3 +229,17 @@ func TestParseDateTimeRelaxed(t *testing.T) {
 		})
 	}
 }
+
+func TestParseDateTimeRejected(t *testing.T) {
+	tests := []string{
+		`Mon, 25 Sep 2017 5:25:40 +02`,
+	}
+	for _, test := range tests {
+		test := test
+
+		t.Run(test, func(t *testing.T) {
+			_, err := ParseDateTime(test)
+			assert.Error(t, err)
+		})
+	}
+}
