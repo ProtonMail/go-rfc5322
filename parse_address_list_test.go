@@ -546,6 +546,11 @@ func TestParseGroup(t *testing.T) {
 			addrs: []*mail.Address{},
 		},
 		{
+			// We permit the group to be surrounded with quotes, although as per RFC5322 it really shouldn't be.
+			input: `"undisclosed recipients:"`,
+			addrs: []*mail.Address{},
+		},
+		{
 			input: `(Empty list)(start)Hidden recipients  :(nobody(that I know))  ;`,
 			addrs: []*mail.Address{},
 		},

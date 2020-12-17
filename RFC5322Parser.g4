@@ -243,8 +243,9 @@ angleAddr
 	| obsAngleAddr
 	;
 
-// relax this definition to allow the final semicolon to be optional. 
-group: displayName Colon groupList? Semicolon? cfws?;
+// relax this definition to allow the final semicolon to be optional
+// and to permit it to be surrounded by quotes.
+group: DQuote? displayName Colon groupList? DQuote? Semicolon? cfws?;
 
 unspaced: Period | At;
 
