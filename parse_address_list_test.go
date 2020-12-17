@@ -537,7 +537,12 @@ func TestParseGroup(t *testing.T) {
 			},
 		},
 		{
-			input: `Undisclosed recipients:;`,
+			input: `undisclosed recipients:;`,
+			addrs: []*mail.Address{},
+		},
+		{
+			// We permit the group to not end in a semicolon, although as per RFC5322 it really should.
+			input: `undisclosed recipients:`,
 			addrs: []*mail.Address{},
 		},
 		{
@@ -566,7 +571,6 @@ func TestParseRejectedAddresses(t *testing.T) {
 	}{
 		{input: `"comma, name"  <username@server.com>, another, name <address@server.com>`},
 		{input: `username`},
-		{input: `undisclosed-recipients:`},
 		{input: `=?ISO-8859-2?Q?First_Last?= <user@domain.com>, <user@domain.com,First/AAA/BBB/CCC,>`},
 		{input: `user@domain...com`},
 		{input: `=?windows-1250?Q?Spr=E1vce_syst=E9mu?=`},
