@@ -260,7 +260,7 @@ mailboxList
 	;
 
 addressList
-	: address (Comma address)* EOF
+	: address ((Comma | Semicolon) address)* EOF
 	| obsAddrList EOF
 	;
 

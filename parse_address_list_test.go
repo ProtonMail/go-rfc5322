@@ -426,6 +426,23 @@ func TestParseAddressList(t *testing.T) {
 			},
 		},
 		{
+			input: `Alice <alice@example.com>; Bob <bob@example.com>; Eve <eve@example.com>`,
+			addrs: []*mail.Address{
+				{
+					Name:    `Alice`,
+					Address: `alice@example.com`,
+				},
+				{
+					Name:    `Bob`,
+					Address: `bob@example.com`,
+				},
+				{
+					Name:    `Eve`,
+					Address: `eve@example.com`,
+				},
+			},
+		},
+		{
 			input: `Ed Jones <c@a.test>,joe@where.test,John <jdoe@one.test>`,
 			addrs: []*mail.Address{
 				{
