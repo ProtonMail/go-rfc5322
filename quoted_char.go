@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type quotedChar struct {
@@ -10,16 +9,12 @@ type quotedChar struct {
 }
 
 func (w *walker) EnterQuotedChar(ctx *parser.QuotedCharContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering quotedChar")
-
 	w.enter(&quotedChar{
 		value: ctx.GetText(),
 	})
 }
 
 func (w *walker) ExitQuotedChar(ctx *parser.QuotedCharContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting quotedChar")
-
 	type withQuotedChar interface {
 		withQuotedChar(*quotedChar)
 	}

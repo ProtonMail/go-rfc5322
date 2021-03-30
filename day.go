@@ -4,7 +4,6 @@ import (
 	"strconv"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type day struct {
@@ -12,8 +11,6 @@ type day struct {
 }
 
 func (w *walker) EnterDay(ctx *parser.DayContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering day")
-
 	var text string
 
 	for _, digit := range ctx.AllDigit() {
@@ -31,8 +28,6 @@ func (w *walker) EnterDay(ctx *parser.DayContext) {
 }
 
 func (w *walker) ExitDay(ctx *parser.DayContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting day")
-
 	type withDay interface {
 		withDay(*day)
 	}

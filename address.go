@@ -4,7 +4,6 @@ import (
 	"net/mail"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type address struct {
@@ -23,13 +22,10 @@ func (a *address) withGroup(group *group) {
 }
 
 func (w *walker) EnterAddress(ctx *parser.AddressContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering address")
 	w.enter(&address{})
 }
 
 func (w *walker) ExitAddress(ctx *parser.AddressContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting address")
-
 	type withAddress interface {
 		withAddress(*address)
 	}

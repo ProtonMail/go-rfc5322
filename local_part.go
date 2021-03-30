@@ -4,7 +4,6 @@ import (
 	"strings"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type localPart struct {
@@ -24,13 +23,10 @@ func (p *localPart) withObsLocalPart(obsLocalPart *obsLocalPart) {
 }
 
 func (w *walker) EnterLocalPart(ctx *parser.LocalPartContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering localPart")
 	w.enter(&localPart{})
 }
 
 func (w *walker) ExitLocalPart(ctx *parser.LocalPartContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting localPart")
-
 	type withLocalPart interface {
 		withLocalPart(*localPart)
 	}

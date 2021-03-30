@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type nameAddr struct {
@@ -18,13 +17,10 @@ func (a *nameAddr) withAngleAddr(angleAddr *angleAddr) {
 }
 
 func (w *walker) EnterNameAddr(ctx *parser.NameAddrContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering nameAddr")
 	w.enter(&nameAddr{})
 }
 
 func (w *walker) ExitNameAddr(ctx *parser.NameAddrContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting nameAddr")
-
 	type withNameAddr interface {
 		withNameAddr(*nameAddr)
 	}

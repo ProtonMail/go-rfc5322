@@ -7,7 +7,6 @@ import (
 
 	"github.com/ProtonMail/go-rfc5322/parser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"github.com/sirupsen/logrus"
 )
 
 // CharsetReader, if non-nil, defines a function to generate charset-conversion readers,
@@ -26,8 +25,8 @@ func ParseAddressList(input string) ([]*mail.Address, error) {
 	p := parser.NewRFC5322Parser(antlr.NewCommonTokenStream(l, antlr.TokenDefaultChannel))
 	w := &walker{}
 
+	p.RemoveErrorListeners()
 	p.AddErrorListener(w)
-	p.AddParseListener(&parseListener{rules: p.GetRuleNames()})
 
 	tree := p.AddressList()
 	if w.err != nil {
@@ -49,8 +48,8 @@ func ParseDateTime(input string) (time.Time, error) {
 	p := parser.NewRFC5322Parser(antlr.NewCommonTokenStream(l, antlr.TokenDefaultChannel))
 	w := &walker{}
 
+	p.RemoveErrorListeners()
 	p.AddErrorListener(w)
-	p.AddParseListener(&parseListener{rules: p.GetRuleNames()})
 
 	tree := p.DateTime()
 	if w.err != nil {
@@ -60,24 +59,4 @@ func ParseDateTime(input string) (time.Time, error) {
 	antlr.ParseTreeWalkerDefault.Walk(w, tree)
 
 	return w.res.(time.Time), w.err
-}
-
-type parseListener struct {
-	antlr.BaseParseTreeListener
-
-	rules []string
-}
-
-func (l *parseListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
-	logrus.
-		WithField("rule", l.rules[ctx.GetRuleIndex()]).
-		WithField("text", ctx.GetText()).
-		Trace("Entering rule")
-}
-
-func (l *parseListener) ExitEveryRule(ctx antlr.ParserRuleContext) {
-	logrus.
-		WithField("rule", l.rules[ctx.GetRuleIndex()]).
-		WithField("text", ctx.GetText()).
-		Trace("Exiting rule")
 }

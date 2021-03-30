@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type offset struct {
@@ -15,8 +14,6 @@ type offset struct {
 }
 
 func (w *walker) EnterOffset(ctx *parser.OffsetContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering offset")
-
 	text := ctx.GetText()
 
 	// NOTE: RFC5322 date-time should always begin with + or -
@@ -42,8 +39,6 @@ func (w *walker) EnterOffset(ctx *parser.OffsetContext) {
 }
 
 func (w *walker) ExitOffset(ctx *parser.OffsetContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting offset")
-
 	type withOffset interface {
 		withOffset(*offset)
 	}

@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type obsZone struct {
@@ -14,8 +13,6 @@ type obsZone struct {
 }
 
 func (w *walker) EnterObsZone(ctx *parser.ObsZoneContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering obsZone")
-
 	loc := time.UTC
 
 	switch strings.ToLower(ctx.GetText()) {
@@ -51,8 +48,6 @@ func (w *walker) EnterObsZone(ctx *parser.ObsZoneContext) {
 }
 
 func (w *walker) ExitObsZone(ctx *parser.ObsZoneContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting obsZone")
-
 	type withObsZone interface {
 		withObsZone(*obsZone)
 	}

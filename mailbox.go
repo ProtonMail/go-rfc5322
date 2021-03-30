@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type mailbox struct {
@@ -21,13 +20,10 @@ func (m *mailbox) withAddrSpec(addrSpec *addrSpec) {
 }
 
 func (w *walker) EnterMailbox(ctx *parser.MailboxContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering mailbox")
 	w.enter(&mailbox{})
 }
 
 func (w *walker) ExitMailbox(ctx *parser.MailboxContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting mailbox")
-
 	type withMailbox interface {
 		withMailbox(*mailbox)
 	}

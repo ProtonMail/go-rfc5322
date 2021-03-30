@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type zone struct {
@@ -20,16 +19,12 @@ func (z *zone) withObsZone(obsZone *obsZone) {
 }
 
 func (w *walker) EnterZone(ctx *parser.ZoneContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering zone")
-
 	w.enter(&zone{
 		location: time.UTC,
 	})
 }
 
 func (w *walker) ExitZone(ctx *parser.ZoneContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting zone")
-
 	type withZone interface {
 		withZone(*zone)
 	}

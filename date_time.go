@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type dateTime struct {
@@ -46,16 +45,12 @@ func (dt *dateTime) withZone(zone *zone) {
 }
 
 func (w *walker) EnterDateTime(ctx *parser.DateTimeContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering dateTime")
-
 	w.enter(&dateTime{
 		loc: time.UTC,
 	})
 }
 
 func (w *walker) ExitDateTime(ctx *parser.DateTimeContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting dateTime")
-
 	dt := w.exit().(*dateTime)
 
 	w.res = time.Date(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec, 0, dt.loc)

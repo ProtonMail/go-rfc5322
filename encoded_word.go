@@ -4,7 +4,6 @@ import (
 	"mime"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type encodedWord struct {
@@ -12,8 +11,6 @@ type encodedWord struct {
 }
 
 func (w *walker) EnterEncodedWord(ctx *parser.EncodedWordContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering encodedWord")
-
 	dec := &mime.WordDecoder{CharsetReader: CharsetReader}
 
 	word, err := dec.Decode(ctx.GetText())
@@ -27,8 +24,6 @@ func (w *walker) EnterEncodedWord(ctx *parser.EncodedWordContext) {
 }
 
 func (w *walker) ExitEncodedWord(ctx *parser.EncodedWordContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting encodedWord")
-
 	type withEncodedWord interface {
 		withEncodedWord(*encodedWord)
 	}

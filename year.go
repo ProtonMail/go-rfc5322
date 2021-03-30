@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type year struct {
@@ -13,8 +12,6 @@ type year struct {
 }
 
 func (w *walker) EnterYear(ctx *parser.YearContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering year")
-
 	var text string
 
 	for _, digit := range ctx.AllDigit() {
@@ -41,8 +38,6 @@ func (w *walker) EnterYear(ctx *parser.YearContext) {
 }
 
 func (w *walker) ExitYear(ctx *parser.YearContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting year")
-
 	type withYear interface {
 		withYear(*year)
 	}

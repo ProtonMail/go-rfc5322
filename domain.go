@@ -4,7 +4,6 @@ import (
 	"strings"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type domain struct {
@@ -24,13 +23,10 @@ func (d *domain) withObsDomain(obsDomain *obsDomain) {
 }
 
 func (w *walker) EnterDomain(ctx *parser.DomainContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering domain")
 	w.enter(&domain{})
 }
 
 func (w *walker) ExitDomain(ctx *parser.DomainContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting domain")
-
 	type withDomain interface {
 		withDomain(*domain)
 	}

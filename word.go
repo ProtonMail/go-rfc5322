@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type word struct {
@@ -22,13 +21,10 @@ func (w *word) withEncodedWord(encodedWord *encodedWord) {
 }
 
 func (w *walker) EnterWord(ctx *parser.WordContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering word")
 	w.enter(&word{})
 }
 
 func (w *walker) ExitWord(ctx *parser.WordContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting word")
-
 	type withWord interface {
 		withWord(*word)
 	}

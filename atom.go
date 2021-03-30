@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type atom struct {
@@ -10,16 +9,12 @@ type atom struct {
 }
 
 func (w *walker) EnterAtom(ctx *parser.AtomContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering atom")
-
 	w.enter(&atom{
 		value: ctx.GetText(),
 	})
 }
 
 func (w *walker) ExitAtom(ctx *parser.AtomContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting atom")
-
 	type withAtom interface {
 		withAtom(*atom)
 	}

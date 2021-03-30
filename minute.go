@@ -4,7 +4,6 @@ import (
 	"strconv"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type minute struct {
@@ -12,8 +11,6 @@ type minute struct {
 }
 
 func (w *walker) EnterMinute(ctx *parser.MinuteContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering minute")
-
 	var text string
 
 	for _, digit := range ctx.AllDigit() {
@@ -31,8 +28,6 @@ func (w *walker) EnterMinute(ctx *parser.MinuteContext) {
 }
 
 func (w *walker) ExitMinute(ctx *parser.MinuteContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting minute")
-
 	type withMinute interface {
 		withMinute(*minute)
 	}

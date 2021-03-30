@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type displayName struct {
@@ -26,13 +25,10 @@ func (n *displayName) withUnspaced(unspaced *unspaced) {
 }
 
 func (w *walker) EnterDisplayName(ctx *parser.DisplayNameContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering displayName")
 	w.enter(&displayName{})
 }
 
 func (w *walker) ExitDisplayName(ctx *parser.DisplayNameContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting displayName")
-
 	type withDisplayName interface {
 		withDisplayName(*displayName)
 	}

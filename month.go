@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type month struct {
@@ -14,8 +13,6 @@ type month struct {
 }
 
 func (w *walker) EnterMonth(ctx *parser.MonthContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering month")
-
 	var m time.Month
 
 	switch strings.ToLower(ctx.GetText()) {
@@ -53,8 +50,6 @@ func (w *walker) EnterMonth(ctx *parser.MonthContext) {
 }
 
 func (w *walker) ExitMonth(ctx *parser.MonthContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting month")
-
 	type withMonth interface {
 		withMonth(*month)
 	}

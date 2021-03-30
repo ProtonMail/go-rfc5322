@@ -4,7 +4,6 @@ import (
 	"net/mail"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type obsMboxList struct {
@@ -19,13 +18,10 @@ func (ml *obsMboxList) withMailbox(mailbox *mailbox) {
 }
 
 func (w *walker) EnterObsMboxList(ctx *parser.ObsMboxListContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering obsMboxList")
 	w.enter(&obsMboxList{})
 }
 
 func (w *walker) ExitObsMboxList(ctx *parser.ObsMboxListContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting obsMboxList")
-
 	type withObsMboxList interface {
 		withObsMboxList(*obsMboxList)
 	}

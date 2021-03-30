@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type angleAddr struct {
@@ -20,13 +19,10 @@ func (a *angleAddr) withObsAngleAddr(obsAngleAddr *obsAngleAddr) {
 }
 
 func (w *walker) EnterAngleAddr(ctx *parser.AngleAddrContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering angleAddr")
 	w.enter(&angleAddr{})
 }
 
 func (w *walker) ExitAngleAddr(ctx *parser.AngleAddrContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting angleAddr")
-
 	type withAngleAddr interface {
 		withAngleAddr(*angleAddr)
 	}

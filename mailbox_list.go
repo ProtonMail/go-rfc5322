@@ -4,7 +4,6 @@ import (
 	"net/mail"
 
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type mailboxList struct {
@@ -23,13 +22,10 @@ func (ml *mailboxList) withObsMboxList(obsMboxList *obsMboxList) {
 }
 
 func (w *walker) EnterMailboxList(ctx *parser.MailboxListContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering mailboxList")
 	w.enter(&mailboxList{})
 }
 
 func (w *walker) ExitMailboxList(ctx *parser.MailboxListContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting mailboxList")
-
 	type withMailboxList interface {
 		withMailboxList(*mailboxList)
 	}

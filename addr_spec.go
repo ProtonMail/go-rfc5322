@@ -2,7 +2,6 @@ package rfc5322
 
 import (
 	"github.com/ProtonMail/go-rfc5322/parser"
-	"github.com/sirupsen/logrus"
 )
 
 type addrSpec struct {
@@ -22,13 +21,10 @@ func (a *addrSpec) withPort(port *port) {
 }
 
 func (w *walker) EnterAddrSpec(ctx *parser.AddrSpecContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Entering addrSpec")
 	w.enter(&addrSpec{})
 }
 
 func (w *walker) ExitAddrSpec(ctx *parser.AddrSpecContext) {
-	logrus.WithField("text", ctx.GetText()).Trace("Exiting addrSpec")
-
 	type withAddrSpec interface {
 		withAddrSpec(*addrSpec)
 	}
