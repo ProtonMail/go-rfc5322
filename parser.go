@@ -16,9 +16,9 @@ import (
 var CharsetReader func(charset string, input io.Reader) (io.Reader, error)
 
 // ParseAddressList parses one or more valid RFC5322 (with RFC2047) addresses.
-func ParseAddressList(input string) ([]*mail.Address, error) {
+func ParseAddressList(input string) ([]mail.Address, error) {
 	if len(input) == 0 {
-		return []*mail.Address{}, nil
+		return []mail.Address{}, nil
 	}
 
 	l := parser.NewRFC5322Lexer(antlr.NewInputStream(input))
@@ -35,7 +35,7 @@ func ParseAddressList(input string) ([]*mail.Address, error) {
 
 	antlr.ParseTreeWalkerDefault.Walk(w, tree)
 
-	return w.res.([]*mail.Address), w.err
+	return w.res.([]mail.Address), w.err
 }
 
 // ParseDateTime parses a valid RFC5322 date-time.

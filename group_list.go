@@ -7,7 +7,7 @@ import (
 )
 
 type groupList struct {
-	addresses []*mail.Address
+	addresses []mail.Address
 }
 
 func (gl *groupList) withMailboxList(mailboxList *mailboxList) {

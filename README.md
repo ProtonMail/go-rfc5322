@@ -52,7 +52,7 @@ and popping off nodes when we exit them, to turn the walker into a kind of visit
 
 ## `parser.go`
 This file implements two methods, 
-`ParseAddressList(string) ([]*mail.Address, error)` 
+`ParseAddressList(string) ([]mail.Address, error)` 
 and
 `ParseDateTime(string) (time.Time, error)`.
 
