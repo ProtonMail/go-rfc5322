@@ -7,11 +7,11 @@ import (
 )
 
 type address struct {
-	addresses []mail.Address
+	addresses []*mail.Address
 }
 
 func (a *address) withMailbox(mailbox *mailbox) {
-	a.addresses = append(a.addresses, mail.Address{
+	a.addresses = append(a.addresses, &mail.Address{
 		Name:    mailbox.name,
 		Address: mailbox.address,
 	})

@@ -7,11 +7,11 @@ import (
 )
 
 type obsMboxList struct {
-	addresses []mail.Address
+	addresses []*mail.Address
 }
 
 func (ml *obsMboxList) withMailbox(mailbox *mailbox) {
-	ml.addresses = append(ml.addresses, mail.Address{
+	ml.addresses = append(ml.addresses, &mail.Address{
 		Name:    mailbox.name,
 		Address: mailbox.address,
 	})

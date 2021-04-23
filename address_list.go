@@ -7,7 +7,7 @@ import (
 )
 
 type addressList struct {
-	addresses []mail.Address
+	addresses []*mail.Address
 }
 
 func (a *addressList) withAddress(address *address) {
