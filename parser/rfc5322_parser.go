@@ -1,4 +1,4 @@
-// Code generated from RFC5322Parser.g4 by ANTLR 4.8. DO NOT EDIT.
+// Code generated from RFC5322Parser.g4 by ANTLR 4.9.2. DO NOT EDIT.
 
 package parser // RFC5322Parser
 
@@ -555,9 +555,6 @@ var parserATN = []uint16{
 	803, 810, 817, 819, 826, 830, 834, 838, 843, 850, 854, 858, 863, 870, 874,
 	878, 883, 886, 893, 901, 921, 942, 947, 982, 1024,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'\u0000'", "", "'\t'", "'\n'", "'\u000B'", "'\u000C'", "'\r'", "",
 	"' '", "'!'", "'\"'", "'#'", "'$'", "'%'", "'&'", "'''", "'('", "')'",
@@ -589,21 +586,25 @@ var ruleNames = []string{
 	"encoding", "token", "tokenChar", "encodedText", "encodedChar", "crlf",
 	"wsp", "vchar", "alpha",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type RFC5322Parser struct {
 	*antlr.BaseParser
 }
 
+// NewRFC5322Parser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *RFC5322Parser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewRFC5322Parser(input antlr.TokenStream) *RFC5322Parser {
 	this := new(RFC5322Parser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
