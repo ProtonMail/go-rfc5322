@@ -1,4 +1,4 @@
-// Code generated from RFC5322Parser.g4 by ANTLR 4.9.2. DO NOT EDIT.
+// Code generated from RFC5322Parser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package parser // RFC5322Parser
 
@@ -841,6 +841,9 @@ func (s *QuotedCharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) QuotedChar() (localctx IQuotedCharContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedCharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, RFC5322ParserRULE_quotedChar)
 
@@ -968,6 +971,9 @@ func (s *QuotedPairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) QuotedPair() (localctx IQuotedPairContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedPairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, RFC5322ParserRULE_quotedPair)
 
@@ -1115,6 +1121,9 @@ func (s *FwsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Fws() (localctx IFwsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFwsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, RFC5322ParserRULE_fws)
 	var _la int
@@ -1401,6 +1410,9 @@ func (s *CtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Ctext() (localctx ICtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewCtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, RFC5322ParserRULE_ctext)
 
@@ -1751,6 +1763,9 @@ func (s *CcontentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Ccontent() (localctx ICcontentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCcontentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, RFC5322ParserRULE_ccontent)
 
@@ -1915,6 +1930,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, RFC5322ParserRULE_comment)
 	var _la int
@@ -2093,6 +2111,9 @@ func (s *CfwsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Cfws() (localctx ICfwsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCfwsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, RFC5322ParserRULE_cfws)
 	var _la int
@@ -2326,6 +2347,9 @@ func (s *AtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Atext() (localctx IAtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, RFC5322ParserRULE_atext)
 
@@ -2592,6 +2616,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, RFC5322ParserRULE_atom)
 
@@ -2727,6 +2754,9 @@ func (s *DotAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DotAtom() (localctx IDotAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewDotAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, RFC5322ParserRULE_dotAtom)
 	var _la int
@@ -3016,6 +3046,9 @@ func (s *QtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Qtext() (localctx IQtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewQtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, RFC5322ParserRULE_qtext)
 
@@ -3363,6 +3396,9 @@ func (s *QuotedContentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) QuotedContent() (localctx IQuotedContentContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedContentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, RFC5322ParserRULE_quotedContent)
 
@@ -3512,6 +3548,9 @@ func (s *QuotedValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) QuotedValue() (localctx IQuotedValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, RFC5322ParserRULE_quotedValue)
 	var _la int
@@ -3653,6 +3692,9 @@ func (s *QuotedStringContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) QuotedString() (localctx IQuotedStringContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedStringContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, RFC5322ParserRULE_quotedString)
 	var _la int
@@ -3826,6 +3868,9 @@ func (s *WordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Word() (localctx IWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, RFC5322ParserRULE_word)
 	var _la int
@@ -4120,6 +4165,9 @@ func (s *DateTimeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DateTime() (localctx IDateTimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, RFC5322ParserRULE_dateTime)
 	var _la int
@@ -4325,6 +4373,9 @@ func (s *DayOfweekContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DayOfweek() (localctx IDayOfweekContext) {
+	this := p
+	_ = this
+
 	localctx = NewDayOfweekContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, RFC5322ParserRULE_dayOfweek)
 	var _la int
@@ -4515,6 +4566,9 @@ func (s *DayNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DayName() (localctx IDayNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewDayNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, RFC5322ParserRULE_dayName)
 
@@ -4760,6 +4814,9 @@ func (s *DayContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Day() (localctx IDayContext) {
+	this := p
+	_ = this
+
 	localctx = NewDayContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, RFC5322ParserRULE_day)
 	var _la int
@@ -4996,6 +5053,9 @@ func (s *MonthContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Month() (localctx IMonthContext) {
+	this := p
+	_ = this
+
 	localctx = NewMonthContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, RFC5322ParserRULE_month)
 
@@ -5316,6 +5376,9 @@ func (s *YearContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Year() (localctx IYearContext) {
+	this := p
+	_ = this
+
 	localctx = NewYearContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, RFC5322ParserRULE_year)
 	var _la int
@@ -5493,6 +5556,9 @@ func (s *HourContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Hour() (localctx IHourContext) {
+	this := p
+	_ = this
+
 	localctx = NewHourContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, RFC5322ParserRULE_hour)
 	var _la int
@@ -5667,6 +5733,9 @@ func (s *MinuteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Minute() (localctx IMinuteContext) {
+	this := p
+	_ = this
+
 	localctx = NewMinuteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, RFC5322ParserRULE_minute)
 	var _la int
@@ -5828,6 +5897,9 @@ func (s *SecondContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Second() (localctx ISecondContext) {
+	this := p
+	_ = this
+
 	localctx = NewSecondContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, RFC5322ParserRULE_second)
 	var _la int
@@ -5974,6 +6046,9 @@ func (s *OffsetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Offset() (localctx IOffsetContext) {
+	this := p
+	_ = this
+
 	localctx = NewOffsetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, RFC5322ParserRULE_offset)
 	var _la int
@@ -6122,6 +6197,9 @@ func (s *ZoneContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Zone() (localctx IZoneContext) {
+	this := p
+	_ = this
+
 	localctx = NewZoneContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, RFC5322ParserRULE_zone)
 
@@ -6249,6 +6327,9 @@ func (s *AddressContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Address() (localctx IAddressContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, RFC5322ParserRULE_address)
 
@@ -6369,6 +6450,9 @@ func (s *MailboxContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Mailbox() (localctx IMailboxContext) {
+	this := p
+	_ = this
+
 	localctx = NewMailboxContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, RFC5322ParserRULE_mailbox)
 
@@ -6489,6 +6573,9 @@ func (s *NameAddrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) NameAddr() (localctx INameAddrContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameAddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, RFC5322ParserRULE_nameAddr)
 
@@ -6637,6 +6724,9 @@ func (s *AngleAddrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) AngleAddr() (localctx IAngleAddrContext) {
+	this := p
+	_ = this
+
 	localctx = NewAngleAddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, RFC5322ParserRULE_angleAddr)
 	var _la int
@@ -6820,6 +6910,9 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Group() (localctx IGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, RFC5322ParserRULE_group)
 	var _la int
@@ -6972,6 +7065,9 @@ func (s *UnspacedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Unspaced() (localctx IUnspacedContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnspacedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, RFC5322ParserRULE_unspaced)
 	var _la int
@@ -7136,6 +7232,9 @@ func (s *DisplayNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DisplayName() (localctx IDisplayNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, RFC5322ParserRULE_displayName)
 
@@ -7328,6 +7427,9 @@ func (s *MailboxListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) MailboxList() (localctx IMailboxListContext) {
+	this := p
+	_ = this
+
 	localctx = NewMailboxListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, RFC5322ParserRULE_mailboxList)
 
@@ -7503,6 +7605,9 @@ func (s *AddressListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) AddressList() (localctx IAddressListContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddressListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, RFC5322ParserRULE_addressList)
 	var _la int
@@ -7667,6 +7772,9 @@ func (s *GroupListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) GroupList() (localctx IGroupListContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, RFC5322ParserRULE_groupList)
 
@@ -7812,6 +7920,9 @@ func (s *AddrSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) AddrSpec() (localctx IAddrSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddrSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, RFC5322ParserRULE_addrSpec)
 	var _la int
@@ -7976,6 +8087,9 @@ func (s *LocalPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) LocalPart() (localctx ILocalPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, RFC5322ParserRULE_localPart)
 	var _la int
@@ -8136,6 +8250,9 @@ func (s *PortContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Port() (localctx IPortContext) {
+	this := p
+	_ = this
+
 	localctx = NewPortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, RFC5322ParserRULE_port)
 	var _la int
@@ -8287,6 +8404,9 @@ func (s *DomainContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Domain() (localctx IDomainContext) {
+	this := p
+	_ = this
+
 	localctx = NewDomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, RFC5322ParserRULE_domain)
 	var _la int
@@ -8512,6 +8632,9 @@ func (s *DomainLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) DomainLiteral() (localctx IDomainLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewDomainLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, RFC5322ParserRULE_domainLiteral)
 	var _la int
@@ -8778,6 +8901,9 @@ func (s *DtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Dtext() (localctx IDtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewDtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, RFC5322ParserRULE_dtext)
 
@@ -9111,6 +9237,9 @@ func (s *ObsNoWSCTLContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsNoWSCTL() (localctx IObsNoWSCTLContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsNoWSCTLContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, RFC5322ParserRULE_obsNoWSCTL)
 	var _la int
@@ -9216,6 +9345,9 @@ func (s *ObsCtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsCtext() (localctx IObsCtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsCtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, RFC5322ParserRULE_obsCtext)
 
@@ -9313,6 +9445,9 @@ func (s *ObsQtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsQtext() (localctx IObsQtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsQtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, RFC5322ParserRULE_obsQtext)
 
@@ -9426,6 +9561,9 @@ func (s *ObsQPContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsQP() (localctx IObsQPContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsQPContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, RFC5322ParserRULE_obsQP)
 
@@ -9577,6 +9715,9 @@ func (s *ObsFWSContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsFWS() (localctx IObsFWSContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsFWSContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, RFC5322ParserRULE_obsFWS)
 	var _la int
@@ -9737,6 +9878,9 @@ func (s *ObsZoneContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsZone() (localctx IObsZoneContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsZoneContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, RFC5322ParserRULE_obsZone)
 
@@ -10035,6 +10179,9 @@ func (s *ObsAngleAddrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsAngleAddr() (localctx IObsAngleAddrContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsAngleAddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, RFC5322ParserRULE_obsAngleAddr)
 	var _la int
@@ -10170,6 +10317,9 @@ func (s *ObsRouteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsRoute() (localctx IObsRouteContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsRouteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, RFC5322ParserRULE_obsRoute)
 
@@ -10323,6 +10473,9 @@ func (s *ObsDomainListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsDomainList() (localctx IObsDomainListContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsDomainListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, RFC5322ParserRULE_obsDomainList)
 	var _la int
@@ -10538,6 +10691,9 @@ func (s *ObsMboxListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsMboxList() (localctx IObsMboxListContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsMboxListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, RFC5322ParserRULE_obsMboxList)
 	var _la int
@@ -10741,6 +10897,9 @@ func (s *ObsAddrListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsAddrList() (localctx IObsAddrListContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsAddrListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, RFC5322ParserRULE_obsAddrList)
 	var _la int
@@ -10919,6 +11078,9 @@ func (s *ObsGroupListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsGroupList() (localctx IObsGroupListContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsGroupListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, RFC5322ParserRULE_obsGroupList)
 	var _la int
@@ -11076,6 +11238,9 @@ func (s *ObsLocalPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsLocalPart() (localctx IObsLocalPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsLocalPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, RFC5322ParserRULE_obsLocalPart)
 	var _la int
@@ -11213,6 +11378,9 @@ func (s *ObsDomainContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) ObsDomain() (localctx IObsDomainContext) {
+	this := p
+	_ = this
+
 	localctx = NewObsDomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, RFC5322ParserRULE_obsDomain)
 	var _la int
@@ -11365,6 +11533,9 @@ func (s *EncodedWordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) EncodedWord() (localctx IEncodedWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewEncodedWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, RFC5322ParserRULE_encodedWord)
 
@@ -11494,6 +11665,9 @@ func (s *CharsetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Charset() (localctx ICharsetContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharsetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, RFC5322ParserRULE_charset)
 
@@ -11591,6 +11765,9 @@ func (s *EncodingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Encoding() (localctx IEncodingContext) {
+	this := p
+	_ = this
+
 	localctx = NewEncodingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, RFC5322ParserRULE_encoding)
 
@@ -11701,6 +11878,9 @@ func (s *TokenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Token() (localctx ITokenContext) {
+	this := p
+	_ = this
+
 	localctx = NewTokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, RFC5322ParserRULE_token)
 	var _la int
@@ -11881,6 +12061,9 @@ func (s *TokenCharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) TokenChar() (localctx ITokenCharContext) {
+	this := p
+	_ = this
+
 	localctx = NewTokenCharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, RFC5322ParserRULE_tokenChar)
 
@@ -12126,6 +12309,9 @@ func (s *EncodedTextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) EncodedText() (localctx IEncodedTextContext) {
+	this := p
+	_ = this
+
 	localctx = NewEncodedTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, RFC5322ParserRULE_encodedText)
 	var _la int
@@ -12362,6 +12548,9 @@ func (s *EncodedCharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) EncodedChar() (localctx IEncodedCharContext) {
+	this := p
+	_ = this
+
 	localctx = NewEncodedCharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, RFC5322ParserRULE_encodedChar)
 
@@ -12690,6 +12879,9 @@ func (s *CrlfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Crlf() (localctx ICrlfContext) {
+	this := p
+	_ = this
+
 	localctx = NewCrlfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, RFC5322ParserRULE_crlf)
 
@@ -12789,6 +12981,9 @@ func (s *WspContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Wsp() (localctx IWspContext) {
+	this := p
+	_ = this
+
 	localctx = NewWspContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, RFC5322ParserRULE_wsp)
 	var _la int
@@ -13030,6 +13225,9 @@ func (s *VcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Vchar() (localctx IVcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewVcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, RFC5322ParserRULE_vchar)
 
@@ -13468,6 +13666,9 @@ func (s *AlphaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RFC5322Parser) Alpha() (localctx IAlphaContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, RFC5322ParserRULE_alpha)
 	var _la int
